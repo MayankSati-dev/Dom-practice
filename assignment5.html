@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>more on DOM</title>
+    <style>
+        *{
+            padding: 0%;
+            margin: 0%;
+            box-sizing: border-box;
+        }
+        body{
+            width: 100%;
+            height: 100%;
+            background-color: black;
+        }
+        main{
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+        .card{
+            margin: 15px;
+            text-align: center;
+            background-color: white;
+            width: 300px;
+            height: 400px;
+            border-radius: 10px;
+        }
+        .card img{
+            background-color: black;
+            height: 200px;
+            width: 200px;
+            border-radius: 50%;
+            object-fit: cover;
+            object-position: center;
+        }
+        h1,h3{
+              margin-top: 10px;
+              white-space: nowrap;
+        }
+        p{
+            margin-top: 10px;
+            font-size: 1.2rem;
+        }
+            </style>
+</head>
+<body>
+    <main>
+        <div class="card">
+            <img src="" alt="">
+            <h1>name</h1>
+            <h3>professiondedjhdfjdbhwdw</h3>
+            <p>edcgwhdb</p>
+        </div>
+    </main>
+    
+    <script>
+    var main=document.querySelector("main");
+    const arr = [
+  {
+    fullName: "Aarav Sharma",
+    profession: "Software Developer",
+    description: "Specializes in building responsive web applications using modern JavaScript frameworks.",
+    image: "https://randomuser.me/api/portraits/men/1.jpg"
+  },
+  {
+    fullName: "Isha Verma",
+    profession: "Graphic Designer",
+    description: "Creates creative brand designs, logos, and social media graphics with a modern aesthetic.",
+    image: "https://randomuser.me/api/portraits/women/2.jpg"
+  },
+  {
+    fullName: "Rohan Singh",
+    profession: "Data Analyst",
+    description: "Expert in data visualization, dashboards, and extracting insights from complex datasets.",
+    image: "https://randomuser.me/api/portraits/men/3.jpg"
+  },
+  {
+    fullName: "Neha Kapoor",
+    profession: "Digital Marketer",
+    description: "Helps companies grow through SEO, social media marketing, and digital ad campaigns.",
+    image: "https://randomuser.me/api/portraits/women/4.jpg"
+  },
+  {
+    fullName: "Karan Mehta",
+    profession: "Photographer",
+    description: "Professional photographer specializing in portraits, events, and creative shoots.",
+    image: "https://randomuser.me/api/portraits/men/5.jpg"
+  }
+];
+sum='';
+arr.forEach(function(elem){
+   sum +=`<div class="card">
+            <img src="${elem.image}" alt="">
+            <h1>${elem.fullName}</h1>
+            <h3>${elem.profession}</h3>
+            <p>${elem.description}</p>
+        </div>`;
+        main.innerHTML=sum;
+})
+</script>
+</body>
+</html>
