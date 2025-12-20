@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>matrix</title>
+    <style>
+        *{
+            padding: 0%;
+            margin: 0%;
+            box-sizing: border-box;
+            color: rgb(3, 240, 39);
+        }
+      
+        body,html{
+            background-color: black;
+            height: 100%;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    </style>
+</head>
+<body>
+    <p id="para">my name is mayank</p>
+    <script>
+         var p= document.getElementById('para')
+         const characters="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
+     const text=p.innerText
+
+var iteration=0;
+ p.addEventListener('mouseenter',function(){
+var clear= setInterval(()=>{
+         const str=text.split('').map((char,index) => {
+                if(index<iteration){
+                    return char;
+                }
+                 return characters.split('')[Math.floor(Math.random() * 52)];
+            }).join("");
+            p.innerText=str; 
+            iteration+=0.2;
+
+
+          if(iteration>=text.length){
+            clearInterval(clear);
+            iteration=0;
+            p.innerText=text;
+        }
+    
+        },30);
+       
+});
+    </script>
+</body>
+</html>
