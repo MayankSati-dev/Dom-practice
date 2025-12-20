@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>card effect</title>
+    <style>
+*{
+    margin: 0%;
+    padding: 0%;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+/* x|y|spread|color*/
+body{
+    width: 100%;
+    height: 100vh;
+    background-color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+/* .box{
+    color: whitesmoke;
+   max-width: 300px;
+   padding-inline: 10px;
+   padding-bottom: 10px;
+   display: flex;
+   flex-direction: column;
+   gap: 10px;
+   box-shadow: 0 0 60px red; 
+   border-radius: 15px;
+   background:linear-gradient(black,black)padding-box,
+    conic-gradient(from 210deg,black,rgb(255, 0, 123),black)border-box;
+      border: 5px solid black;
+} */
+ @property --rotate{
+     syntax: "<angle>";
+        initial-value: 0deg;
+        inherits: false;
+ }
+ @keyframes borderAnimate{
+    from{
+        --rotate:0deg;
+    }
+    to{
+        --rotate:360deg;
+    }
+ }
+ .box{
+    color: whitesmoke;
+    max-width: 300px;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    border-radius: 15px;
+
+    border: 5px solid transparent;
+
+    background:
+      linear-gradient(black, black) padding-box,
+      conic-gradient(
+        from var(--rotate),
+        black,
+        rgb(255, 0, 123),
+       black
+      ) border-box;
+
+    box-shadow: 0 0 60px rgb(24, 22, 22);
+    animation: borderAnimate 4s infinite;
+    animation-timing-function: linear;
+    animation-play-state: paused;
+    transition: all 0.3s linear;
+}
+.box:hover{  
+    color: rgb(255, 0, 123);
+    text-shadow: 0px 0 10px rgb(255, 0, 123);
+    animation-play-state: running;
+     box-shadow: 0 0 60px rgb( 255,0,123);
+}
+.box>img{
+    width: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+    </style>
+</head>
+<body>
+<div class="box">
+    <img src="image.png" alt="">
+    <h1>The cult</h1>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam aliquid provident quaerat!</p>
+</div>
+    <script></script>
+</body>
+</html>
